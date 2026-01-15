@@ -217,7 +217,7 @@ public struct Campaign: Codable, Hashable, Sendable, CodingKeysContaining, Ident
     /// - A `dailyBudgetAmount` can be changed but not removed from the payload when updating an existing campaign.
     /// - Your `dailyBudgetAmount` must be less than your `budgetAmount`.
     /// - Your `dailyBudgetAmount` must be greater than or equal to the `defaultBidAmount` in your ad group.
-    public let dailyBudgetAmount: Money
+    public let dailyBudgetAmount: Money?
     /// The indicator of whether the campaign is soft-deleted.
     public let deleted: Bool?
     /// The status of the campaign.
@@ -276,7 +276,7 @@ public struct Campaign: Codable, Hashable, Sendable, CodingKeysContaining, Ident
         countriesOrRegions: [String],
         countryOrRegionServingStateReasons: [String: [CountryOrRegionsServingStateReason]]? = nil,
         creationTime: Date? = nil,
-        dailyBudgetAmount: Money,
+        dailyBudgetAmount: Money? = nil,
         deleted: Bool? = nil,
         displayStatus: DisplayStatus? = nil,
         endTime: Date? = nil,
